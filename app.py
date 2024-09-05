@@ -6,6 +6,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/buy')
+def buy():
+    return render_template('buy.html')
+
 @app.route('/buyers')
 def buyers():
     return render_template('buyers.html')
@@ -17,6 +21,10 @@ def connect():
 @app.route('/farmer1_buy')
 def farmer1_buy():
     return render_template('farmer1_buy.html')
+
+@app.route('/farmers')
+def farmers():
+    return render_template('farmers.html')
 
 @app.route('/login')
 def login():
@@ -30,13 +38,11 @@ def marketplace():
 def order():
     return render_template('order.html')
 
-@app.route('/register')
-def register():
-    return render_template('register.html')
-
 @app.route('/sell')
 def sell():
     return render_template('sell.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    

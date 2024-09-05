@@ -26,7 +26,7 @@
     width: 90%;
     max-width: 700px; /* Reduced max-width */
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two-column grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two-column grid layout */
     gap: 10px; /* Gap between grid items */
     align-items: start;
 }
@@ -70,24 +70,35 @@
     box-shadow: 0 0 4px rgba(39, 174, 96, 0.4);
 }
 
-/* Signup Buttons Container */
-.signup-buttons {
-    display: flex; /* Use flexbox for buttons */
-    justify-content: space-between; /* Space between buttons */
-    grid-column: span 2; /* Span across both columns */
-    margin-top: 20px; /* Margin to separate from form fields */
+/* Category Buttons */
+.category-container {
+    grid-column: span 2; /* Make sure buttons span both columns */
+    display: flex;
+    flex-direction: column; /* Arrange buttons vertically */
+    gap: 10px; /* Space between buttons */
 }
 
-/* Signup Option Styles */
-.signup-option {
-    flex: 1; /* Make each option take up equal space */
-    margin: 0 10px; /* Margin between buttons */
-    text-align: center; /* Center-align the content */
+.category-btn {
+    padding: 10px;
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center-align text in button */
+}
+
+.category-btn:hover {
+    background: #2ecc71;
+    box-shadow: 0 2px 4px rgba(39, 174, 96, 0.2);
 }
 
 /* Button Styles */
 .btn {
-    width: 100%; /* Full width of the parent container */
+    grid-column: span 2; /* Button spans both columns */
     padding: 10px;
     background: #27ae60;
     color: #fff;
@@ -131,15 +142,7 @@
         width: 95%;
     }
 
-    .auth-form h2, .input-group, .signup-buttons, .auth-form p {
+    .auth-form h2, .input-group, .btn, .category-container, .auth-form p {
         grid-column: span 1; /* Full width for smaller screens */
-    }
-
-    .signup-buttons {
-        flex-direction: column; /* Stack buttons vertically on smaller screens */
-    }
-
-    .signup-option {
-        margin: 10px 0; /* Add margin between stacked buttons */
     }
 }

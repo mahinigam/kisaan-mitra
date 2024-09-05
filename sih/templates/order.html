@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Checkout</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <form action="#" method="post" class="checkout-form">
+                <!-- Product Image -->
+                <section class="form-section product-image">
+                    <h2>Product</h2>
+                    <img src="apple.jpg" alt="Product Image">
+                </section>
+
+                <!-- Quantity -->
+                <section class="form-section">
+                    <h2>Product Quantity</h2>
+                    <label for="quantity">Select Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                </section>
+
+                <!-- Shipping Address -->
+                <section class="form-section">
+                    <h2>Shipping Address</h2>
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="4" placeholder="Enter your shipping address"></textarea>
+                </section>
+
+                <!-- Phone Number -->
+                <section class="form-section">
+                    <h2>Phone Number</h2>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                </section>
+
+                <!-- Delivery Instructions -->
+                <section class="form-section">
+                    <h2>Delivery Instructions</h2>
+                    <label for="delivery-instructions">Instructions:</label>
+                    <textarea id="delivery-instructions" name="delivery-instructions" rows="4" placeholder="Enter delivery instructions (if any)"></textarea>
+                </section>
+
+                <!-- Coupon Code -->
+                <section class="form-section">
+                    <h2>Coupon Code</h2>
+                    <label for="coupon">Enter Coupon Code:</label>
+                    <input type="text" id="coupon" name="coupon" placeholder="Enter coupon code">
+                </section>
+
+                <!-- Payment Options -->
+                <section class="form-section">
+                    <h2>Payment Options</h2>
+                    <label>
+                        <input type="radio" name="payment" value="credit-card" checked>
+                        Credit Card
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="paypal">
+                        PayPal
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="bank-transfer">
+                        Bank Transfer
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="Cash on delivery">
+                        Cash on delivery
+                    </label>
+                </section>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-button">Place Order</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Checkout Page. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

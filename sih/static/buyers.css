@@ -1,0 +1,93 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+header {
+    background: #27ae60;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Main Content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Buyers List */
+.buyers-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Buyer Card */
+.buyer-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px); /* Adjusted for gap */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buyer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.buyer-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.buyer-card h2 {
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+.buyer-card p {
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Connect Button */
+.connect-btn {
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+.connect-btn:hover {
+    background: #2ecc71;
+    box-shadow: 0 4px 8px rgba(39, 174, 96, 0.2);
+}
+
+/* Footer */
+footer {
+    background: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+    color: #555;
+}

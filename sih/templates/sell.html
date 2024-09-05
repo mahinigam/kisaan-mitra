@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers Market - Sell Your Product</title>
+    <link rel="stylesheet" href="sell.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Farmers Market</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sell">Sell Your Product</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Sell Your Product Section -->
+        <section id="sell" class="sell-section">
+            <div class="container">
+                <h2>Sell Your Product</h2>
+                <form class="sell-form">
+                    <label for="farmerName">Farmer's Name:</label>
+                    <input type="text" id="farmerName" name="farmerName" required>
+
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+
+                    <label for="productDescription">Product Description:</label>
+                    <textarea id="productDescription" name="productDescription" required></textarea>
+
+                    <label for="productPrice">Price (per unit):</label>
+                    <input type="text" id="productPrice" name="productPrice" required>
+
+                    <label for="productImage">Product Image:</label>
+                    <input type="file" id="productImage" name="productImage" accept="image/*" required>
+
+                    <button type="submit" class="submit-button">List Product</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2024 Farmers Market. All rights reserved.</p>
+            <p>Contact us: info@farmersmarket.com | +1 234 567 890</p>
+        </div>
+    </footer>
+</body>
+
+</html>

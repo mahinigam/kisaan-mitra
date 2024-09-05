@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers Market - Buy & Sell</title>
+    <link rel="stylesheet" href="/static/buy.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Farmers Market</h1>
+            <nav>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#sell">Sell Your Product</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Products Section -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <h2>Available Products</h2>
+                <div class="product-list">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <img src="/assets/apple.jpg" alt="Apple">
+                        <h3>Fresh Apples</h3>
+                        <p>Organic, juicy apples from local farms.</p>
+                        <p class="price">&#8377;500/kg</p>
+                        <form action="order.html">
+                            <button class="buy-button">Buy Now</button>
+                        </form>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="/assets/tomato.jpg" alt="Tomato">
+                        <h3>Ripe Tomatoes</h3>
+                        <p>Fresh and ripe tomatoes, perfect for salads.</p>
+                        <p class="price">$1.5 per lb</p>
+                        <form action="order.html">
+                            <button class="buy-button">Buy Now</button>
+                        </form>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img src="/assets/sweetcorn.jpg" alt="Corn">
+                        <h3>Sweet Corn</h3>
+                        <p>Sweet and tender corn cobs.</p>
+                        <p class="price">$0.75 each</p>
+                        <form action="order.html">
+                            <button class="buy-button">Buy Now</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2024 Farmers Market. All rights reserved.</p>
+            <p>Contact us: info@farmersmarket.com | +1 234 567 890</p>
+        </div>
+    </footer>
+</body>
+
+</html>

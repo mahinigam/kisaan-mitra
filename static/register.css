@@ -70,6 +70,32 @@
     box-shadow: 0 0 4px rgba(39, 174, 96, 0.4);
 }
 
+/* Category Buttons */
+.category-container {
+    grid-column: span 2; /* Make sure buttons span both columns */
+    display: flex;
+    flex-direction: column; /* Arrange buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+.category-btn {
+    padding: 10px;
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center-align text in button */
+}
+
+.category-btn:hover {
+    background: #2ecc71;
+    box-shadow: 0 2px 4px rgba(39, 174, 96, 0.2);
+}
+
 /* Button Styles */
 .btn {
     grid-column: span 2; /* Button spans both columns */
@@ -116,7 +142,7 @@
         width: 95%;
     }
 
-    .auth-form h2, .input-group, .btn, .auth-form p {
+    .auth-form h2, .input-group, .btn, .category-container, .auth-form p {
         grid-column: span 1; /* Full width for smaller screens */
     }
 }

@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Direct Market Access for Farmers</title>
-    <link rel="stylesheet" href="/static/register.css">
+    <title>Sign Up - Direct Market Access</title>
+    <link rel="stylesheet" href="/static/register.css"> <!-- If you have CSS, update the link here -->
 </head>
 <body>
     <div class="auth-container">
         <div class="auth-form">
             <h2>Sign Up</h2>
-            <form action="#" method="POST">
+            <form action="/register" method="POST" id="signupForm">
+                <input type="hidden" id="user_type" name="user_type" value="">
+                
                 <div class="input-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -21,7 +23,7 @@
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Password:</label>20
+                    <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div class="input-group">
@@ -55,11 +57,20 @@
                         <option value="driving_license">Driving License</option>
                     </select>
                 </div>
-                <button type="submit" class="btn">Sign Up</button>
-                <p>Already have an account? <a href="http://127.0.0.1:5000/login">Login</a></p>
+
+                <!-- Move category buttons inside form -->
+                <div class="category-container">
+                    <button type="button" id="get_started_farmer" class="category-btn" onclick="setUserType('farmer')">Sign Up as Farmer</button>
+                    <button type="button" id="get_started_buyer" class="category-btn" onclick="setUserType('buyer')">Sign Up as Buyer</button>
+                    <button type="button" id="get_started_cold_storage" class="category-btn" onclick="setUserType('cold_storage')">Sign Up as Cold Storage</button>
+                </div>
+
+                <!-- Login link -->
+                <p>Already have an account? <a href="/login">Login</a></p>
             </form>
         </div>
     </div>
+
     <script src="/static/register.js"></script>
 </body>
 </html>

@@ -66,17 +66,19 @@ nav ul li a:hover {
 }
 
 .hero-content{
-    margin-top: 75px;
+    margin-top: 95px;
 
 }
 .hero-content h1 {
     font-size: 3em;
-    margin-bottom: 20px;
+    margin-top: 60px;
+    
 }
 
 .hero-content p {
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    color: greenyellow;
 }
 
 .hero-content .btn {

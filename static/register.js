@@ -55,11 +55,10 @@ function validateForm(event) {
         return;
     }
 
-    // If all validations pass, submit the form and redirect to home page
-    alert('Form submitted successfully! Redirecting to home page...');
-    
-    // Redirect to home page (replace 'home.html' with your actual home page URL)
-    window.location.href = 'index.html'; // Change 'home.html' to your actual home page URL
+    // If all validations pass, submit the form
+    alert('Form submitted successfully!');
+    // You can proceed to submit the form data using AJAX or a form action.
+    window.location.href='index.html'; // Uncomment this line if you want to submit the form.
 }
 
 // Helper functions for validation
@@ -86,6 +85,11 @@ function validateDistrict(district) {
 
 function validatePincode(pincode) {
     return /^\d{6}$/.test(pincode); // Pincode must be exactly 6 digits
+}
+
+function setUserType(userType) {
+    document.getElementById('user_type').value = userType;
+    document.getElementById('signupForm').submit(); // Submit the form
 }
 
 // Attach the validation function to the form submission event

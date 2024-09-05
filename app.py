@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -86,6 +86,8 @@ def register_user():
         buyers_collection.insert_one(user_data)
     elif user_type == 'cold_storage':
         cold_storages_collection.insert_one(user_data)
+
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)

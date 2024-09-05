@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Cold Storage</title>
+    <link rel="stylesheet" href="/static/cold_storage.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Register Your Cold Storage</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="registration-form">
+            <div class="container">
+                <h2>Cold Storage Registration Form</h2>
+                <form id="coldStorageForm">
+                    <label for="ownerName">Owner's Name:</label>
+                    <input type="text" id="ownerName" name="ownerName" required>
+
+                    <label for="businessName">Business Name:</label>
+                    <input type="text" id="businessName" name="businessName" required>
+
+                    <label for="contactEmail">Contact Email:</label>
+                    <input type="email" id="contactEmail" name="contactEmail" required>
+
+                    <label for="contactPhone">Contact Phone:</label>
+                    <input type="tel" id="contactPhone" name="contactPhone" required>
+
+                    <label for="address">Facility Address:</label>
+                    <textarea id="address" name="address" required></textarea>
+
+                    <label for="facilitySize">Facility Size (sq ft):</label>
+                    <input type="number" id="facilitySize" name="facilitySize" required>
+
+                    <label for="storageType">Type of Storage:</label>
+                    <input type="text" id="storageType" name="storageType" required>
+
+                    <label for="storageConditions">Storage Conditions:</label>
+                    <textarea id="storageConditions" name="storageConditions" required></textarea>
+
+                    <label for="hoursOfOperation">Hours of Operation:</label>
+                    <input type="text" id="hoursOfOperation" name="hoursOfOperation" required>
+
+                    <label for="securityMeasures">Security Measures:</label>
+                    <textarea id="securityMeasures" name="securityMeasures" required></textarea>
+
+                    <label for="certifications">Licenses and Certifications:</label>
+                    <textarea id="certifications" name="certifications"></textarea>
+
+                    <label for="pricingStructure">Pricing Structure:</label>
+                    <textarea id="pricingStructure" name="pricingStructure" required></textarea>
+
+                    <label for="contractTerms">Contract Terms:</label>
+                    <textarea id="contractTerms" name="contractTerms"></textarea>
+
+                    <label for="facilityPhotos">Upload Facility Photos:</label>
+                    <input type="file" id="facilityPhotos" name="facilityPhotos[]" multiple>
+
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Farmers Market. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

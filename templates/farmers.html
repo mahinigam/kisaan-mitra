@@ -5,24 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmers Market - Buy, Sell, or Cold Storage</title>
-    <link rel="stylesheet" href="/static/marketplace.css">
+    <title>Farmers Market - Meet Our Farmers</title>
+    <link rel="stylesheet" href="/static/farmers.css">
 </head>
 
 <body>
     <!-- Header -->
     <header>
         <div class="container">
-            <h1>Farmers Market</h1>
+            <h1>Meet Our Farmers</h1>
         </div>
     </header>
 
     <!-- Main Content -->
     <main>
-        <div class="button-container">
-            <a href="buy.html" class="option-button buy-button">Buy</a>
-            <a href="sell.html" class="option-button sell-button">Sell</a>
-            <a href="cold-storage.html" class="option-button cold-storage-button">Cold Storage</a> <!-- Added Cold Storage button -->
+        <div class="farmer-list" id="farmerList">
+            <!-- Farmer cards will be dynamically inserted here -->
         </div>
     </main>
 
@@ -33,6 +31,8 @@
             <p>Contact us: info@farmersmarket.com | +1 234 567 890</p>
         </div>
     </footer>
+
+    <script src="/static/farmers.js"></script>
 </body>
 
 </html>

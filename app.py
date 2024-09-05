@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template_string
+from flask import Flask, request, jsonify, render_template
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -27,6 +27,10 @@ def farmer1_buy():
 def farmers():
     return render_template('farmers.html')
 
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
 @app.route('/login')
 def login():
     return render_template('login.html')
@@ -50,22 +54,7 @@ db = client['myDatabase']
 # Collections for each user type
 farmers_collection = db['farmers']
 buyers_collection = db['buyers']
-cold_storage_collection = db['cold_storages']
-
-# Serve the HTML content directly as a string in the app
-@app.route('/')
-def home():
-    # Read the HTML file
-    with open('register.html', 'r') as file:
-        html_content = file.read()
-    return render_template_string(html_content)
-
-# Serve the JavaScript directly from the file
-@app.route('/register.js')
-def serve_js():
-    with open('register.js', 'r') as file:
-        js_content = file.read()
-    return js_content, 200, {'Content-Type': 'application/javascript'}
+cold_storages_collection = db['cold_storages']
 
 # Handle user registration
 @app.route('/register', methods=['POST'])
@@ -96,13 +85,7 @@ def register_user():
     elif user_type == 'buyer':
         buyers_collection.insert_one(user_data)
     elif user_type == 'cold_storage':
-        cold_storage_collection.insert_one(user_data)
-    else:
-        return jsonify({"status": "Invalid user type"}), 400
-
-    return jsonify({"status": "Registration successful!"})
+        cold_storages_collection.insert_one(user_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-    

@@ -60,9 +60,9 @@
 
                 <!-- Move category buttons inside form -->
                 <div class="category-container">
-                    <button id="get_started_farmer" class="category-btn">Sign Up as Farmer</button>
-                    <button id="get_started_buyer" class="category-btn">Sign Up as Buyer</button>
-                    <button id="get_started_cold_storage" class="category-btn">Sign Up as Cold Storage</button>
+                    <button type="button" id="get_started_farmer" class="category-btn" onclick="setUserType('farmer')">Sign Up as Farmer</button>
+                    <button type="button" id="get_started_buyer" class="category-btn" onclick="setUserType('buyer')">Sign Up as Buyer</button>
+                    <button type="button" id="get_started_cold_storage" class="category-btn" onclick="setUserType('cold_storage')">Sign Up as Cold Storage</button>
                 </div>
 
                 <!-- Login link -->
@@ -71,6 +71,6 @@
         </div>
     </div>
 
-    <script src="/register.js"></script>
+    <script src="/static/register.js"></script>
 </body>
 </html>

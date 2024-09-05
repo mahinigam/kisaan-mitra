@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for
 from pymongo import MongoClient
 
-app = Flask(__name__)
+app = Flask(_name_)
 
 @app.route('/')
 def index():
@@ -14,8 +14,6 @@ def buy():
 @app.route('/buyers')
 def buyers():
     return render_template('buyers.html')
-
-
 
 @app.route('/connect')
 def connect():

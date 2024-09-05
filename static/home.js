@@ -19,7 +19,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // "Get Started" button click event
 document.querySelector('.hero .btn').addEventListener('click', function () {
     alert('Redirecting to the registration page...');
-    window.location.href = 'register.html';
+    window.location.href = 'http://127.0.0.1:5000/register';
 });
 
 // Toggle mobile menu

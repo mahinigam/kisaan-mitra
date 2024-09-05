@@ -14,6 +14,8 @@ def buy():
 def buyers():
     return render_template('buyers.html')
 
+
+
 @app.route('/connect')
 def connect():
     return render_template('connect.html')
@@ -25,6 +27,10 @@ def farmer1_buy():
 @app.route('/farmers')
 def farmers():
     return render_template('farmers.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 
 @app.route('/login')
 def login():
@@ -44,5 +50,10 @@ def sell():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+    
+    
+    
+    
 
     

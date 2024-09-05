@@ -15,6 +15,8 @@ def buy():
 def buyers():
     return render_template('buyers.html')
 
+
+
 @app.route('/connect')
 def connect():
     return render_template('connect.html')

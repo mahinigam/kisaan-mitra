@@ -13,7 +13,6 @@ document.querySelector('.sell-form').addEventListener('submit', function(event) 
         product: formData.get('productName'),
         description: formData.get('productDescription'),
         price: formData.get('productPrice'),
-        image: imageURL // Store the URL of the image
     };
 
     // Retrieve existing farmers from localStorage

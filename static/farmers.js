@@ -6,7 +6,6 @@ window.onload = function() {
         const card = document.createElement('div');
         card.className = 'farmer-card';
         card.innerHTML = `
-            <img src="${farmer.image}" alt="${farmer.name}" class="farmer-photo">
             <div class="farmer-info">
                 <h2>${farmer.name}</h2>
                 <p class="rating">Rating: ★★★★★</p>

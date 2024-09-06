@@ -20,42 +20,8 @@
     <!-- Main Content -->
     <main>
         <div class="container">
-            <div class="buyers-list">
-                <div class="buyer-card">
-                    <img src="/static/images/buyer1.jpg" alt="Buyer 1" class="buyer-image">
-                    <h2>Buyer Name 1</h2>
-                    <p><strong>Product Required:</strong> Organic Apples</p>
-                    <p><strong>Quantity:</strong> 50 kg</p>
-                    <p><strong>State:</strong>Kerala</p>
-                    <p><strong>District:</strong>kochi</p>
-                    <form action="http://127.0.0.1:5000/connect">
-                        <button class="connect-btn">Connect</button>
-                    </form>
-                </div>
-
-                <div class="buyer-card">
-                    <img src="/static/images/buyer2.jpg" alt="Buyer 2" class="buyer-image">
-                    <h2>Buyer Name 2</h2>
-                    <p><strong>Product Required:</strong> Fresh Tomatoes</p>
-                    <p><strong>Quantity:</strong> 30 kg</p>
-                    <p><strong>State:</strong>Uttar pradesh</p>
-                    <p><strong>District:</strong>lucknow</p>
-                    <form action="http://127.0.0.1:5000/connect">
-                        <button class="connect-btn">Connect</button>
-                    </form>
-                </div>
-
-                <div class="buyer-card">
-                    <img src="/static/images/buyer3.jpg" alt="Buyer 3" class="buyer-image">
-                    <h2>Buyer Name 3</h2>
-                    <p><strong>Product Required:</strong>corn</p>
-                    <p><strong>Quantity:</strong> 100 kg</p>
-                    <p><strong>State:</strong> Madhya pradesh</p>
-                    <p><strong>District:</strong> Indore</p>
-                    <form action="http://127.0.0.1:5000/connect">
-                        <button class="connect-btn">Connect</button>
-                    </form>
-                </div>
+            <div class="buyers-list" id="buyersList">
+                <!-- Buyer cards will be generated here -->
             </div>
         </div>
     </main>
@@ -66,6 +32,40 @@
             <p>&copy; 2024 Buyers List. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Load data from localStorage and display it
+        window.onload = function() {
+            const buyersList = JSON.parse(localStorage.getItem('buyersList')) || [];
+
+            const buyersListContainer = document.getElementById('buyersList');
+
+            // Iterate over the buyers and create buyer cards
+            buyersList.forEach((buyer, index) => {
+                const buyerCard = document.createElement('div');
+                buyerCard.className = 'buyer-card';
+
+                buyerCard.innerHTML = `
+                    <h2>${buyer.buyerName}</h2>
+                    <p><strong>Product Required:</strong> ${buyer.productRequired}</p>
+                    <p><strong>Quantity:</strong> ${buyer.quantity} kg</p>
+                    <p><strong>State:</strong> ${buyer.state}</p>
+                    <p><strong>District:</strong> ${buyer.district}</p>
+                    <form action="connect.html" method="GET">
+                        <input type="hidden" name="buyerName" value="${buyer.buyerName}">
+                        <input type="hidden" name="productRequired" value="${buyer.productRequired}">
+                        <input type="hidden" name="quantity" value="${buyer.quantity}">
+                        <input type="hidden" name="state" value="${buyer.state}">
+                        <input type="hidden" name="district" value="${buyer.district}">
+                        <button class="connect-btn" type="submit">Connect</button>
+                    </form>
+                `;
+
+                buyersListContainer.appendChild(buyerCard);
+            });
+        };
+    </script>
+    <script src="/static/buyers.js"></script>
 </body>
 
 </html>

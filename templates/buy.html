@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmers Market - Buy & Sell</title>
+    <title>Buyers Market - Product Requirement</title>
     <link rel="stylesheet" href="/static/buy.css">
 </head>
 
@@ -13,69 +13,50 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <h1>Farmers Market</h1>
-            <nav>
-                <ul>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#sell">Sell Your Product</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <h1>Buyers Market</h1>
         </div>
     </header>
 
     <!-- Main Content -->
     <main>
-        <!-- Products Section -->
-        <section id="products" class="products-section">
+        <!-- Product Requirement Form Section -->
+        <section id="requirement" class="requirement-section">
             <div class="container">
-                <h2>Available Products</h2>
-                <div class="product-list">
-                    <!-- Product 1 -->
-                    <div class="product-card">
-                        <img src="/static/images/apple.jpg" alt="Apple">
-                        <h3>Fresh Apples</h3>
-                        <p>Organic, juicy apples from local farms.</p>
-                        <p class="price">&#8377;500/kg</p>
-                        <form action="http://127.0.0.1:5000/order">
-                            <button class="buy-button">Buy Now</button>
-                        </form>
-                    </div>
+                <h2>Product Requirement Form</h2>
+                <form id="requirementForm" class="requirement-form">
+                    <label for="buyerName">Buyer's Name:</label>
+                    <input type="text" id="buyerName" name="buyerName" required>
 
-                    <!-- Product 2 -->
-                    <div class="product-card">
-                        <img src="/static/images/tomato.jpg" alt="Tomato">
-                        <h3>Ripe Tomatoes</h3>
-                        <p>Fresh and ripe tomatoes, perfect for salads.</p>
-                        <p class="price">$1.5 per lb</p>
-                        <form action="http://127.0.0.1:5000/order">
-                            <button class="buy-button">Buy Now</button>
-                        </form>
-                    </div>
+                    <label for="productRequired">Product Required:</label>
+                    <input type="text" id="productRequired" name="productRequired" required>
 
-                    <!-- Product 3 -->
-                    <div class="product-card">
-                        <img src="/static/images/sweetcorn.jpg" alt="Corn">
-                        <h3>Sweet Corn</h3>
-                        <p>Sweet and tender corn cobs.</p>
-                        <p class="price">$0.75 each</p>
-                        <form action="http://127.0.0.1:5000/order">
-                            <button class="buy-button">Buy Now</button>
-                        </form>
-                        
-                    </div>
-                </div>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required>
+
+                    <label for="district">District:</label>
+                    <input type="text" id="district" name="district" required>
+
+                    <label for="productImage">Select Image:</label>
+                    <input type="file" id="productImage" name="productImage" accept="image/*" required>
+
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
             </div>
         </section>
-
+    </main>
 
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <p>&copy; 2024 Farmers Market. All rights reserved.</p>
-            <p>Contact us: info@farmersmarket.com | +1 234 567 890</p>
+            <p>&copy; 2024 Buyers Market. All rights reserved.</p>
+            <p>Contact us: info@buyersmarket.com | +1 234 567 890</p>
         </div>
     </footer>
+
+    <script src="/static/buy.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,11 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, flash, request, render_template, redirect, url_for
 from pymongo import MongoClient
+import os
 
 app = Flask(__name__)
+
+# Set the secret key for session management
+app.secret_key = os.urandom(24)
 
 @app.route('/')
 def index():
@@ -56,38 +60,67 @@ farmers_collection = db['farmers']
 buyers_collection = db['buyers']
 cold_storages_collection = db['cold_storages']
 
-# Handle user registration
 @app.route('/register', methods=['POST'])
 def register_user():
-    user_type = request.form.get('user_type')
-    name = request.form.get('name')
-    email = request.form.get('email')
-    password = request.form.get('password')
-    gender = request.form.get('gender')
-    state = request.form.get('state')
-    district = request.form.get('district')
-    pincode = request.form.get('pincode')
-    identity = request.form.get('identity')
+    if request.method == 'POST':
+        user_type = request.form.get('user_type')
+        name = request.form.get('name')
+        email = request.form.get('email')
+        password = request.form.get('password')  # In production, hash this
+        gender = request.form.get('gender')
+        state = request.form.get('state')
+        district = request.form.get('district')
+        pincode = request.form.get('pincode')
+        identity = request.form.get('identity')
 
-    user_data = {
-        "name": name,
-        "email": email,
-        "password": password,  # In production, hash the password!
-        "gender": gender,
-        "state": state,
-        "district": district,
-        "pincode": pincode,
-        "identity": identity
-    }
+        user_data = {
+            "name": name,
+            "email": email,
+            "password": password,  # Remember to hash the password in production
+            "gender": gender,
+            "state": state,
+            "district": district,
+            "pincode": pincode,
+            "identity": identity
+        }
 
-    if user_type == 'farmer':
-        farmers_collection.insert_one(user_data)
-    elif user_type == 'buyer':
-        buyers_collection.insert_one(user_data)
-    elif user_type == 'cold_storage':
-        cold_storages_collection.insert_one(user_data)
+        if user_type == 'farmer':
+            farmers_collection.insert_one(user_data)
+        elif user_type == 'buyer':
+            buyers_collection.insert_one(user_data)
+        elif user_type == 'cold_storage':
+            cold_storages_collection.insert_one(user_data)
 
-    return redirect(url_for('index'))
+        flash(f"Hi {name}, your registration was successful!", 'success')
+        return redirect(url_for('index'))
+
+    return render_template('register.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login_user():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        user_type = request.form.get('user_type')
+
+        # Check login credentials based on user type
+        if user_type == 'farmer':
+            user = farmers_collection.find_one({"email": email, "password": password})
+        elif user_type == 'buyer':
+            user = buyers_collection.find_one({"email": email, "password": password})
+        elif user_type == 'cold_storage':
+            user = cold_storages_collection.find_one({"email": email, "password": password})
+        else:
+            flash("Invalid user type selected.", 'error')
+            return redirect(url_for('login'))
+
+        if user:
+            flash(f"Hi {user['name']}, welcome back!", 'success')
+            return redirect(url_for('index'))
+        else:
+            flash("Invalid email or password. Please try again.", 'error')
+
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

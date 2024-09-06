@@ -16,7 +16,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="http://127.0.0.1:5000/farmers">Farmers</a></li>
                 <li><a href="http://127.0.0.1:5000/buyers">Buyers</a></li>
-                <li><a href="http://127.0.0.1:5000/coldstorage">Cold Storage</a></li>
+                <li><a href="http://127.0.0.1:5000/cold_storage">Cold Storage</a></li>
 
                 <li><a href="http://127.0.0.1:5000/marketplace">Marketplace</a></li>
                 <li><a href="#">Contact</a></li>
@@ -59,6 +59,17 @@
         <p>Whether you're a farmer looking for better access to markets or a buyer searching for fresh, sustainable produce, we're here to help.</p>
         <a href="http://127.0.0.1:5000/register" class="btn">Register Now</a>
     </section>
+
+    <!-- Flash message container -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 
     <!-- Footer -->
     <footer>

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Get form values
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
+        const userType = document.getElementById('user_type').value;
 
         // Basic validation
         if (validateForm(email, password)) {

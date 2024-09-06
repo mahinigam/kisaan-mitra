@@ -23,12 +23,7 @@
             <div class="chat-container">
                 <!-- Chat History -->
                 <div class="chat-history">
-                    <div class="message buyer-message">
-                        <p><strong>Buyer:</strong> I'm interested in purchasing 50 kg of Organic Apples. What's the price?</p>
-                    </div>
-                    <div class="message seller-message">
-                        <p><strong>Seller:</strong> The price for 50 kg is $100. Do you agree?</p>
-                    </div>
+                    <!-- Chat messages will be added here -->
                 </div>
 
                 <!-- Negotiation Form -->
@@ -36,11 +31,11 @@
                     <form id="negotiation-form">
                         <div class="form-group">
                             <label for="quantity">Quantity:</label>
-                            <input type="number" id="quantity" name="quantity" value="50" min="1" required>
+                            <input type="number" id="quantity" name="quantity" required>
                         </div>
                         <div class="form-group">
                             <label for="price">Price:</label>
-                            <input type="text" id="price" name="price" value="$100" required>
+                            <input type="text" id="price" name="price" required>
                         </div>
                         <button type="submit" class="btn">Submit Offer</button>
                     </form>
@@ -64,6 +59,32 @@
 
     <!-- Optional JavaScript -->
     <script src="/static/connect.js"></script>
+    <script>
+        // Read query parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const buyerName = urlParams.get('buyerName');
+        const productRequired = urlParams.get('productRequired');
+        const quantity = urlParams.get('quantity');
+        const state = urlParams.get('state');
+        const district = urlParams.get('district');
+
+        // Update page with buyer details
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.chat-history').innerHTML = `
+                <div class="message buyer-message">
+                    <p><strong>Buyer:</strong> I'm interested in purchasing ${quantity} of ${productRequired}. What's the price?</p>
+                </div>
+                <div class="message seller-message">
+                    <p><strong>Seller:</strong> The price for ${quantity} is $100. Do you agree?</p>
+                </div>
+            `;
+
+            const quantityInput = document.getElementById('quantity');
+            const priceInput = document.getElementById('price');
+            quantityInput.value = quantity;
+            priceInput.value = "$100"; // Default price; modify as needed
+        });
+    </script>
 </body>
 
 </html>

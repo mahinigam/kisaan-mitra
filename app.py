@@ -10,6 +10,9 @@ app.secret_key = os.urandom(24)
 @app.route('/')
 def index():
     return render_template('index.html')
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @app.route('/buy')
 def buy():
